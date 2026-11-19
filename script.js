@@ -22,7 +22,6 @@ try {
   console.warn("Could not read saved product images:", error);
 }
 const defaultProductImages = Object.fromEntries(products.map(product => [product.id, product.image]));
-products.forEach(product => { product.images = [product.image]; });
 products.forEach(product => {
   if (savedProductImages[product.id]) product.image = savedProductImages[product.id];
 });
