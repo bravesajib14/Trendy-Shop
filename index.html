@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shop fashion, beauty and daily essentials at Trendy-Shop Bangladesh. Great prices, nationwide delivery and easy WhatsApp ordering.">
+<meta name="theme-color" content="#ff6b00">
+<title>Trendy-Shop | Everyday Shopping, Made Easy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement"><div class="container"><span>🚚 <b>Nationwide Delivery</b></span><span>☏ WhatsApp Support</span><span>✨ Daily Offers</span></div></div>
+<header class="site-header" id="siteHeader">
+  <div class="container header-main">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <a class="logo" href="#" aria-label="Trendy-Shop home"><img src="images/trendy-shop-logo.png" alt="Trendy-Shop.in — Everything you need, one click away"></a>
+    <div class="search-wrap" role="search">
+      <select id="searchCategory" aria-label="Search category"><option value="all">All categories</option><option value="Clothing">Fashion</option><option value="Cosmetics">Beauty</option><option value="Grocery">Grocery</option></select>
+      <input id="searchInput" type="search" placeholder="Search products, brands and more..." aria-label="Search products">
+      <button id="searchButton" aria-label="Search">⌕</button>
+    </div>
+    <div class="header-actions">
+      <details class="image-manager header-signin" id="imageManager">
+  <summary aria-label="Sign in to manage product images"><span class="signin-icon">↪</span><small>Sign In</small></summary>
+  <p class="image-manager-intro">Sign in as the store admin, choose a product, select a photo, preview it, then upload it to shared cloud storage. Customers will see the same image on every device.</p>
+  <div class="image-manager-controls">
+    <div class="image-manager-fields">
+      <div class="cloud-admin-login" id="cloudAdminLogin">
+        <strong>Store admin sign-in</strong>
+        <label for="cloudAdminEmail">Admin email<input id="cloudAdminEmail" type="email" autocomplete="username" placeholder="admin@example.com"></label>
+        <label for="cloudAdminPassword">Admin password<input id="cloudAdminPassword" type="password" autocomplete="current-password" placeholder="Your admin password"></label>
+        <div class="image-manager-actions"><button class="btn btn-primary" type="button" id="cloudAdminSignIn">Sign in</button><button class="btn btn-light" type="button" id="cloudAdminSignOut" hidden>Sign out</button></div>
+        <div class="image-manager-status" id="cloudAuthStatus" aria-live="polite">Cloud setup is required before shared uploads can be used.</div>
+      </div>
+      <label for="imageProductSelect">Select product
+        <select id="imageProductSelect"></select>
+      </label>
+      <label for="productImageFile">Choose images (JPG, PNG or WebP — select multiple)
+        <input id="productImageFile" type="file" accept="image/jpeg,image/png,image/webp" multiple multiple>
+      </label>
+      <div class="image-manager-actions">
+        <button class="btn btn-primary" type="button" id="saveProductImage" disabled>Upload image to cloud</button>
+        <button class="btn btn-light" type="button" id="resetProductImage">Restore default</button>
+      </div>
+      <div class="image-manager-status" id="imageManagerStatus" aria-live="polite"></div>
+    </div>
+    <div class="image-preview-wrap">
+      <strong>Product image gallery</strong>
+      <img class="image-preview" id="productImagePreview" alt="Selected product image preview">
+      <div id="productImageGallery" class="admin-image-gallery" aria-live="polite"></div>
+      <small class="image-manager-note">You can select several photos at once. All uploaded photos will be shown to customers when they open this product.</small>
+    </div>
+  </div>
+  <p class="image-manager-note">Cloud setup required: add your Supabase project URL and public anon key to <code>cloud-config.js</code>, then run the SQL in <code>supabase-setup.sql</code>. Never put a service-role key in browser code. Disable public sign-ups and create the store admin user in Supabase.</p>
+</details>
+      <button class="icon-btn" id="mobileSearch" aria-label="Show search">⌕</button>
+      <button class="icon-btn" id="cartOpen" aria-label="Open shopping cart">🛒<span class="cart-count" id="cartCount">0</span><small>Cart</small></button>
+    </div>
+  </div>
+  <nav class="nav"><div class="container"><a class="all-cats" href="#categories">☷ All Categories</a><a href="#fashion">Fashion</a><a href="#beauty">Beauty & Cosmetics</a><a href="#grocery">Grocery & Essentials</a><a href="#flash">Flash Sale ⚡</a><a href="#new">New Arrivals</a></div></nav>
+</header>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation"><button class="close-btn" id="menuClose" aria-label="Close menu">×</button><a href="#categories">Shop by category</a><a href="#flash">Flash sale</a><a href="#featured">Featured products</a><a href="#fashion">Fashion</a><a href="#beauty">Beauty & Cosmetics</a><a href="#grocery">Grocery & Essentials</a><a href="#delivery">Delivery information</a><a href="#faq">FAQ</a></nav>
+<main>
+<section class="hero"><div class="container"><div class="hero-slider" aria-label="Featured promotions">
+  <article class="slide active"><div class="slide-content"><span class="eyebrow">The season's best picks</span><h1>Style that speaks. Prices that smile.</h1><p>Refresh your wardrobe with everyday fashion favourites and special prices.</p><a class="btn btn-primary" href="#fashion">Explore Fashion →</a></div><div class="slide-art" aria-hidden="true">👗</div></article>
+  <article class="slide"><div class="slide-content"><span class="eyebrow">Glow your own way</span><h2>Your beauty, your moment.</h2><p>Discover beauty essentials and feel-good favourites for your daily routine.</p><a class="btn btn-primary" href="#beauty">Shop Beauty →</a></div><div class="slide-art" aria-hidden="true">💄</div></article>
+  <article class="slide"><div class="slide-content"><span class="eyebrow">Fresh picks every day</span><h2>Everyday essentials, delivered.</h2><p>Stock up on daily needs with convenient shopping from Trendy-Shop.</p><a class="btn btn-primary" href="#grocery">Shop Grocery →</a></div><div class="slide-art" aria-hidden="true">🛍️</div></article>
+  <div class="slider-controls" id="sliderDots"><button class="dot active" aria-label="Slide 1"></button><button class="dot" aria-label="Slide 2"></button><button class="dot" aria-label="Slide 3"></button></div><button class="slider-arrow prev" id="prevSlide" aria-label="Previous slide">‹</button><button class="slider-arrow" id="nextSlide" aria-label="Next slide">›</button>
+</div></div></section>
+
+<section class="section" id="categories"><div class="container"><div class="section-head"><div><h2>Shop by category</h2><p>Find exactly what you're looking for</p></div><a class="text-link" href="#featured">Explore all →</a></div><div class="category-grid">
+<a class="category-card" href="#fashion"><span class="category-icon">👕</span><span><strong>Fashion</strong><small>Clothing & accessories</small></span></a>
+<a class="category-card" href="#beauty"><span class="category-icon">💅</span><span><strong>Beauty & Cosmetics</strong><small>Care, colour & glow</small></span></a>
+<a class="category-card" href="#grocery"><span class="category-icon">🥑</span><span><strong>Grocery</strong><small>Daily essentials</small></span></a>
+<a class="category-card" href="#flash"><span class="category-icon">⚡</span><span><strong>Featured Deals</strong><small>Limited-time offers</small></span></a>
+</div></div></section>
+
+<section class="flash" id="flash"><div class="container section"><div class="section-head"><div><span class="eyebrow">Don't miss out</span><h2>⚡ Flash Sale</h2><p>Hot deals, while stocks last</p></div><div class="timer">ENDS IN <span id="hours">08</span>:<span id="minutes">24</span>:<span id="seconds">59</span></div></div><div class="product-grid" id="flashProducts"></div></div></section>
+
+<section class="section" id="featured"><div class="container"><div class="section-head"><div><h2>Featured products</h2><p>Handpicked favourites for you</p></div><a href="#allProducts" class="text-link">View all products →</a></div><div class="filter-bar" id="filterBar"><button class="filter-chip active" data-filter="all">All products</button><button class="filter-chip" data-filter="Clothing">Fashion</button><button class="filter-chip" data-filter="Cosmetics">Beauty</button><button class="filter-chip" data-filter="Grocery">Grocery</button></div><div class="product-grid" id="featuredProducts"></div><div id="noResults" hidden style="padding:30px;text-align:center;color:#777">No products found. Try another search.</div></div></section>
+
+
+
+<section class="section" id="new"><div class="container"><div class="section-head"><div><h2>New arrivals</h2><p>Fresh finds just added to the store</p></div></div><div class="product-grid" id="newProducts"></div></div></section>
+
+<section class="section" id="fashion"><div class="container"><div class="section-head"><div><h2>Fashion collection</h2><p>Everyday looks, made effortlessly stylish</p></div><a class="text-link" href="#featured" data-jump-filter="Clothing">Shop fashion →</a></div><div class="collection-band"><div class="collection-tile"><div><span class="eyebrow">Everyday style</span><h3>Wear your<br>confidence.</h3><p>Comfort meets personality.</p><a class="text-link" href="#featured" data-jump-filter="Clothing">Discover clothing →</a></div><span class="emoji">🧥</span></div><div class="collection-tile"><div><span class="eyebrow">Small details, big impact</span><h3>Make it<br>your look.</h3><p>Find your new favourites.</p><a class="text-link" href="#featured" data-jump-filter="Clothing">Explore styles →</a></div><span class="emoji">👟</span></div></div></div></section>
+
+<section class="section" id="beauty"><div class="container"><div class="section-head"><div><h2>Beauty collection</h2><p>Little rituals. A little more you.</p></div><a class="text-link" href="#featured" data-jump-filter="Cosmetics">Shop beauty →</a></div><div class="product-grid" id="beautyProducts"></div></div></section>
+<section class="section" id="grocery"><div class="container"><div class="section-head"><div><h2>Grocery & daily essentials</h2><p>Useful everyday picks for your home</p></div><a class="text-link" href="#featured" data-jump-filter="Grocery">Shop grocery →</a></div><div class="product-grid" id="groceryProducts"></div></div></section>
+
+<section class="benefits section"><div class="container"><div class="section-head"><div><h2>Why shop with Trendy-Shop?</h2><p>A smoother shopping experience from click to delivery</p></div></div><div class="benefit-grid"><div class="benefit"><div class="symbol">🚚</div><h3>Fast Nationwide Delivery</h3><p>We deliver across Bangladesh.</p></div><div class="benefit"><div class="symbol">🔒</div><h3>Secure Ordering</h3><p>Confirm your order directly with our team.</p></div><div class="benefit"><div class="symbol">⭐</div><h3>Quality Products</h3><p>Thoughtfully selected everyday products.</p></div><div class="benefit"><div class="symbol">↩️</div><h3>Easy Return Support</h3><p>Contact us for return assistance.</p></div></div></div></section>
+
+<section class="section"><div class="container"><div class="section-head"><div><h2>Loved by our shoppers</h2><p>Demo customer feedback</p></div></div><div class="reviews"><article class="review"><div class="stars">★★★★★</div><p>“The ordering process was simple and the support team was helpful. Looking forward to shopping again!”</p><strong>Samira A.</strong><small>Dhaka · Demo review</small></article><article class="review"><div class="stars">★★★★★</div><p>“A nice mix of everyday products in one place. The WhatsApp order confirmation is convenient.”</p><strong>Rafi H.</strong><small>Chattogram · Demo review</small></article><article class="review"><div class="stars">★★★★★</div><p>“Easy to browse on my phone and the product details are clear. Great shopping experience.”</p><strong>Nusrat T.</strong><small>Sylhet · Demo review</small></article></div></div></section>
+
+<section class="section" id="delivery"><div class="container"><div class="section-head"><div><h2>Delivery information</h2><p>Shopping made convenient, wherever you are in Bangladesh</p></div></div><div class="delivery-grid"><div class="delivery-box"><h3>🚚 Nationwide delivery</h3><p>Trendy-Shop accepts orders from customers across Bangladesh. Delivery time and charge are confirmed by our team when your order is placed.</p><ul><li>Delivery available across Bangladesh</li><li>Order confirmation through WhatsApp</li><li>Delivery charge depends on destination</li></ul></div><div class="delivery-box"><h3>💬 Need a hand?</h3><p>Have a question about a product, delivery or your order? Our team is ready to help you through WhatsApp.</p><a class="btn btn-primary" href="https://wa.me/8801741532414" target="_blank" rel="noopener">Chat with support ↗</a></div></div></div></section>
+
+<section class="section" id="faq"><div class="container"><div class="section-head" style="justify-content:center;text-align:center"><div><h2>Frequently asked questions</h2><p>Quick answers to common questions</p></div></div><div class="faq-list">
+<div class="faq-item"><button class="faq-q">How do I place an order? <span>＋</span></button><div class="faq-a">Add your products to the cart, choose WhatsApp checkout, enter your contact and delivery details, then send the pre-filled order message to our team.</div></div>
+<div class="faq-item"><button class="faq-q">Do you deliver outside Dhaka? <span>＋</span></button><div class="faq-a">Yes. Nationwide delivery is available across Bangladesh. Our team will confirm the delivery method, estimated time and charge.</div></div>
+<div class="faq-item"><button class="faq-q">How can I pay? <span>＋</span></button><div class="faq-a">Payment options are confirmed by our team during order confirmation. Please do not send payment before receiving verified instructions.</div></div>
+<div class="faq-item"><button class="faq-q">Can I return a product? <span>＋</span></button><div class="faq-a">Please contact our support team with your order details. Return eligibility and next steps will be confirmed according to the product and order condition.</div></div>
+<div class="faq-item"><button class="faq-q">Are the products on this website real listings? <span>＋</span></button><div class="faq-a">This website is a demo storefront. Every sample item is clearly marked “Demo Product” and should be replaced with verified live inventory before launch.</div></div>
+</div></div></section>
+
+<section class="section"><div class="container"><div class="newsletter"><div><h2>Get offers in your inbox</h2><p>Sign up for new arrivals, special offers and shopping updates.</p></div><form id="newsletterForm"><input type="email" placeholder="Your email address" aria-label="Email address" required><button class="btn btn-primary" type="submit">Subscribe</button></form></div></div></section>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="logo footer-logo" href="#" aria-label="Trendy-Shop home"><img src="images/trendy-shop-logo.png" alt="Trendy-Shop.in"></a><p>Your everyday marketplace for fashion, beauty and daily essentials. Discover more, shop with ease.</p><p>🇧🇩 Proudly serving Bangladesh</p></div><div class="footer-col"><h4>Quick links</h4><a href="#categories">Shop categories</a><a href="#featured">Featured products</a><a href="#flash">Flash sale</a><a href="#new">New arrivals</a></div><div class="footer-col"><h4>Customer care</h4><a href="#delivery">Delivery information</a><a href="#faq">FAQs</a><a href="https://wa.me/8801741532414" target="_blank" rel="noopener">Contact support</a><a href="#faq">Returns & support</a></div><div class="footer-col"><h4>Get in touch</h4><p>WhatsApp: +880 1741-532414</p><p>Nationwide delivery in Bangladesh</p><p>Currency: BDT (৳)</p></div></div><div class="footer-bottom"><span>© <span id="year"></span> Trendy-Shop. All rights reserved.</span><span>Demo storefront · Product listings are sample content.</span></div></div></footer>
+
+<button class="whatsapp-float" id="whatsappHelp" aria-label="WhatsApp support" title="WhatsApp support">◉</button>
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-modal="true" role="dialog"><div class="drawer-head"><h2>Your shopping cart</h2><button class="close-btn" id="cartClose" aria-label="Close cart">×</button></div><div class="cart-items" id="cartItems"></div><div class="drawer-foot">
+  <label for="deliveryArea" style="display:block;font-weight:600;margin-bottom:8px">Delivery area</label>
+  <select id="deliveryArea" required style="width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin-bottom:12px">
+    <option value="">Select delivery area</option>
+    <option value="inside">Inside Dhaka — ৳80</option>
+    <option value="outside">Outside Dhaka — ৳130</option>
+  </select>
+  <div class="total-line"><span>Subtotal</span><span id="cartSubtotal">৳0</span></div>
+  <div class="total-line"><span>Delivery charge</span><span id="deliveryCharge">৳0</span></div>
+  <div class="total-line" style="font-weight:700"><span>Total cost</span><span id="cartTotal">৳0</span></div>
+  <small id="deliveryHint" style="color:#888">Select your delivery area to calculate the total.</small>
+  <button class="btn btn-primary" id="checkoutButton">Checkout with WhatsApp ↗</button>
+  <button class="btn btn-light" id="continueShopping">Continue shopping</button>
+</div></aside>
+
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-label="Product details"><div class="modal-card"><button class="close-btn modal-close" id="modalClose" aria-label="Close product details">×</button><div class="modal-content" id="modalContent"></div></div></div>
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Customer details"><div class="modal-card" style="max-width:480px"><button class="close-btn modal-close" id="checkoutClose" aria-label="Close checkout">×</button><div class="modal-details"><span class="eyebrow">Almost there</span><h2>Where should we deliver?</h2><p>Enter your details. We'll prepare your order in WhatsApp for confirmation.</p><form class="checkout-fields" id="checkoutForm"><input id="customerName" placeholder="Customer name" required autocomplete="name"><input id="customerPhone" placeholder="Mobile number" required type="tel" autocomplete="tel"><textarea id="customerAddress" placeholder="Full delivery address" required autocomplete="street-address"></textarea><button class="btn btn-primary" type="submit">Send order on WhatsApp ↗</button></form></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="cloud-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
