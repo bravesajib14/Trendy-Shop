@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = "8801741532414";
 const products = [
-{id:1,name:"Classic Cotton Kurti",category:"Clothing",price:890,oldPrice:1250,discount:29,desc:"A comfortable everyday cotton kurti with an easy, flattering fit.",image:"https://via.placeholder.com/640x640/F5E3D8/553A2C?text=Classic+Kurti",flash:true,new:true},
+{id:1,name:"Amave Brand Article-Unstitched Replica",category:"Clothing",price:890,oldPrice:6000,discount:8,desc:"A comfortable with an easy, flattering fit.",image:"https://via.placeholder.com/640x640/F5E3D8/553A2C?text=Unstitched+Replica",flash:true,new:true},
 {id:2,name:"Everyday Casual T-Shirt",category:"Clothing",price:450,oldPrice:600,discount:25,desc:"Soft-touch casual tee for relaxed everyday styling.",image:"https://via.placeholder.com/640x640/E6EAF0/39465A?text=Casual+T-Shirt",flash:true,new:false},
 {id:3,name:"Women's Elegant Handbag",category:"Clothing",price:1290,oldPrice:1690,discount:24,desc:"A versatile handbag designed to complement daily outfits.",image:"https://via.placeholder.com/640x640/EADFD6/614B3E?text=Elegant+Handbag",flash:false,new:true},
 {id:4,name:"Comfort Fit Sneakers",category:"Clothing",price:1550,oldPrice:1990,discount:22,desc:"Everyday sneakers with a clean look and comfortable feel.",image:"https://via.placeholder.com/640x640/E9ECEF/3B4650?text=Comfort+Sneakers",flash:true,new:true},
